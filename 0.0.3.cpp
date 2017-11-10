@@ -56,8 +56,8 @@ void sdvig(float *array, int size, int m) {
   }
 }
 void reverse(float **&matrix, unsigned int rows, unsigned int columns, int m) {
-  unsigned int a = (rows + columns) * 2 - 4;
-  float *array = new float[a];
+  unsigned int size = (rows + columns) * 2 - 4;
+  float *array = new float[size];
   int element = 0;
   for (unsigned int i = 0; i < columns; i++) {
     array[element] = matrix[0][i];
@@ -75,7 +75,7 @@ void reverse(float **&matrix, unsigned int rows, unsigned int columns, int m) {
     array[element] = matrix[i][0];
     element++;
   }
-  sdvig(array, a, m);
+  sdvig(array, size, m);
   element = 0;
   for (unsigned int i = 0; i < columns; i++) {
     matrix[0][i] = array[element];
